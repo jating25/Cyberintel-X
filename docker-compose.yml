@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: cyberintelx-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: cyberintelx
+    volumes:
+      - mongodb_data:/data/db
+    restart: unless-stopped
+
+  cyberintelx-backend:
+    build: ./backend
+    container_name: cyberintelx-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URI=mongodb://admin:password@mongodb:27017/cyberintelx?authSource=admin
+      - NVD_API_KEY=${NVD_API_KEY}
+      - OTX_API_KEY=${OTX_API_KEY}
+      - VIRUSTOTAL_API_KEY=${VT_API_KEY}
+      - MALSHARE_API_KEY=${MALSHARE_API_KEY}
+      - ABUSEIPDB_API_KEY=${ABUSEIPDB_API_KEY}
+      - HOST=0.0.0.0
+      - PORT=8000
+      - DEBUG=false
+      - WORKERS=4
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:

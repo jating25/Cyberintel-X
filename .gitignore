@@ -1,0 +1,43 @@
+# General
+*.pyc
+__pycache__/
+*.log
+.DS_Store
+Thumbs.db
+
+# Python
+.venv/
+.env
+.env.*
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+dist/
+
+# IDE / Tools
+.vscode/
+.idea/
+*.iml
+
+# Build / Coverage
+coverage/
+*.coverage
+.cache/
+
+# Data / Local services
+mongodb-data/
+mongodb/
+mongodb-fresh/
+mongodb-install/
+**/data/**
+
+# OS installers / archives / binaries
+*.msi
+*.zip
+*.exe
+
+# Misc
+.qoder/
