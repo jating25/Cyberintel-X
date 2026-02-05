@@ -130,32 +130,11 @@ Default demo credentials (dummy auth):
 
 ---
 
-## Running a Demo
+## Cyber‑Ethical Use
 
-For a smooth screen recording (e.g., LinkedIn demo):
+CyberIntel-X is built **for defensive and educational purposes only**:
 
-1. Start **MongoDB**, **backend**, and **frontend** as above.
-2. Log in at `http://localhost:3000` with `admin / admin`.
-3. Walk through:
-   - **Dashboard**: showcase totals and severity distribution.
-   - **Threats**: table, filters, map view, and per‑threat details.
-   - **Alerts**: list, filtering, and status updates.
-   - **Reports**: generate a report and show the PDF download.
-   - **Security** section: Endpoints / Network / Vulnerabilities / IOC overview pages.
-
----
-
-## Production Notes
-
-- Replace the dummy auth/token logic with a real user store and JWTs.
-- Use strong, secret values for `SECRET_KEY` and never commit real API keys.
-- Run FastAPI behind a reverse proxy (nginx, Traefik, etc.) and serve the Vite build (`npm run build`) as static assets.
-- Configure proper TLS/HTTPS and network‑accessible MongoDB only when hardened and authenticated.
-
----
-
-## License
-
-This project is intended as a security‑focused demo / learning project.  
-Adjust licensing text here to match your preferred license (e.g., MIT, Apache‑2.0).
+- Use this project to learn, monitor, and improve security in environments you **own or are explicitly authorized to assess**.
+- Do **not** use any integrated threat‑intel feeds, automation, or techniques from this project to attack, disrupt, or otherwise harm systems.
+- Always follow applicable laws, organizational policies, and responsible disclosure practices when working with threat data or vulnerabilities.
 
